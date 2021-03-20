@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
         with:
-          persist-credentials: false
+          persist-credentials: true
 
       - name: split
         run: |
