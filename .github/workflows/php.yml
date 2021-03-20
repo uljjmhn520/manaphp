@@ -49,3 +49,10 @@ jobs:
           git add .
           git commit -am "hello world"
           git push
+      - name: test pull 2
+        run: |
+          mkdir -p /tmp/testt2
+          cd /tmp/testt2
+          git clone git@github.com:uljjmhn520/manaphp.git
+          ls -al 
+          ls -al manaphp
