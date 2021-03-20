@@ -34,3 +34,18 @@ jobs:
            echo "haha"
           ls -al $(git --exec-path)
           sudo sh split.sh
+      - name: test pull and push
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          mkdir -p /tmp/testt
+          cd /tmp/testt
+          git clone git@github.com:uljjmhn520/manaphp.git
+          cd manaphp
+          git checkout test
+          git config --local user.name "ManaPHP Mark"
+          git config --local user.email "manaphp@qq.com"
+          date > readme2.md
+          git add .
+          git commit -am "hello world"
+          git push
