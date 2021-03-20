@@ -124,8 +124,6 @@ subsplit_require_work_dir()
 
 subsplit_init()
 {
-    ssh -o StrictHostKeyChecking=no -o LogLevel=ERROR manaqhq@github.com
-
 	if [ -e "$WORK_DIR" ]
 	then
 		die "Working directory already found at ${WORK_DIR}; please remove or run update"
