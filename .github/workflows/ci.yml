@@ -1,0 +1,20 @@
+name: ci
+on:
+  push:
+    branches:
+      - test
+jobs:
+  subsplit:
+    runs-on : ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          persist-credentials: false
+
+      - name: split
+        run: |
+          cd build
+          sudo chmod a+x git-subsplit.sh
+          sudo cp git-subsplit.sh "$(git --exec-path)"/git-subsplit;
+          sudo sh split.sh
